@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  datasource:  #数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///reggie
+    username: root
+    password: root
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #日志输出
+    map-underscore-to-camel-case: true  #开启下划线与小驼峰映射
+  type-aliases-package: com.itheima.reggie.entity  # 实体类别名扫描
+  mapper-locations:
+    - classpath:mappers/*.xml  #mapper文件所在路径
